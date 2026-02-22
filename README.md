@@ -2,6 +2,8 @@
 
 A comprehensive business analytics project simulating a **Tango-like live-streaming platform** with realistic synthetic data, advanced SQL analytics, interactive dashboards, and A/B testing with statistical analysis.
 
+🔗 **[Live Demo](https://tangolivestream-n9ieuldkgjmxywd3feedgv.streamlit.app/)**
+
 ## 🎯 Skills Practised
 
 | Skill                        | What's Covered                                                                                       |
