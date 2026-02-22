@@ -26,7 +26,11 @@ from scipy import stats
 # ─── Configuration ───────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT_ROOT / "data" / "platform.db"
-
+# Auto-generate data if DB doesn't exist (for Streamlit Cloud)
+if not DB_PATH.exists():
+    import subprocess
+    subprocess.run(["python", "scripts/data_generator.py"], check=True)
+    subprocess.run(["python", "scripts/seed_database.py"], check=True)
 st.set_page_config(
     page_title="StreamPulse Analytics",
     page_icon="📊",
