@@ -37,7 +37,17 @@ A comprehensive business analytics project simulating a **Tango-like live-stream
 
 ## 🚀 Quick Start
 
-### 1. Install Dependencies
+### Option A: Docker (Recommended)
+
+```bash
+docker compose up --build
+```
+
+This generates the data, seeds the database, and launches the dashboard at **http://localhost:8501** — all in one command.
+
+### Option B: Manual Setup
+
+#### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt

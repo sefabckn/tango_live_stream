@@ -1,8 +1,6 @@
-
 data/
-*.db
-*.json
-
 venv/
+.git/
 __pycache__/
 *.pyc
+.gitignore

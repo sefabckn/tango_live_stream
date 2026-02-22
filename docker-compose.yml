@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - stream-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  stream-data:
