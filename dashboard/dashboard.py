@@ -28,9 +28,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT_ROOT / "data" / "platform.db"
 # Auto-generate data if DB doesn't exist (for Streamlit Cloud)
 if not DB_PATH.exists():
-    import subprocess
-    subprocess.run(["python", "scripts/data_generator.py"], check=True)
-    subprocess.run(["python", "scripts/seed_database.py"], check=True)
+    import subprocess, sys
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run([sys.executable, str(PROJECT_ROOT / "scripts" / "data_generator.py")],
+                   cwd=str(PROJECT_ROOT), check=True)
+    subprocess.run([sys.executable, str(PROJECT_ROOT / "scripts" / "seed_database.py")],
+                   cwd=str(PROJECT_ROOT), check=True)
 st.set_page_config(
     page_title="StreamPulse Analytics",
     page_icon="📊",
