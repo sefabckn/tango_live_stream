@@ -1,0 +1,6 @@
+
+data/
+*.db
+*.json
+
+venv/
