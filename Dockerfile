@@ -9,8 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project source code
 COPY . .
 
-# Make entrypoint executable
-RUN chmod +x entrypoint.sh
+# Make the shell entrypoint executable and normalize Windows checkouts.
+RUN sed -i 's/\r$//' entrypoint.sh && chmod +x entrypoint.sh
 
 # Streamlit port
 EXPOSE 8501
